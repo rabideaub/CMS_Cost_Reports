@@ -14,6 +14,6 @@ sas hha.s2s3wkshts.sas
 sas hha.standalone.cpv.sas
 #####################
 cd /schaeffer-b/sch-protected/from-projects/VERTICAL-INTEGRATION/rabideau/Programs/Costs
-sas combine_trim_hosp_ccr.sas
+sas combine_trim_hosp_ccr2.sas
 sas combine_trim_snf_ccr.sas
 sas trim_hha_cpv.sas

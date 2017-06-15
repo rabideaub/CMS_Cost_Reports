@@ -1,0 +1,19 @@
+#!/bin/bash
+sas inputhosp.sas
+sas hosps2s3wkshts.sas
+sas wide_cost_report.sas
+#####################
+sas inputsnf.sas
+sas snf.s2s3wkshts.sas
+sas snfccr.sas
+#####################
+#Home Health uses v96 data still, so it is in the old cost generating folder. v96 and v10 cost report programs and data are kept separated
+cd /schaeffer-b/sch-protected/from-projects/VERTICAL-INTEGRATION/rabideau/Programs/Costs/Test_Old
+sas inputhha.sas
+sas hha.s2s3wkshts.sas
+sas hha.standalone.cpv.sas
+#####################
+cd /schaeffer-b/sch-protected/from-projects/VERTICAL-INTEGRATION/rabideau/Programs/Costs
+sas combine_trim_hosp_ccr.sas
+sas combine_trim_snf_ccr.sas
+sas trim_hha_cpv.sas
